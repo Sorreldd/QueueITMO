@@ -5,7 +5,18 @@ import java.util.Scanner;
 public class ApplicationQueue {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		QueueInterface q = new ArrayQueue();
+		System.out.println("¬ведите название класса CircleQueue или ArrayQueue");
+		String nameOfClass = "";
+		nameOfClass = sc.next();
+		Object qq = null;
+		try {
+			Class c = Class.forName("ru.artyomkomarov." + nameOfClass);
+			qq = c.newInstance();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		 
+		QueueInterface q = (QueueInterface) qq;
 		System.out.println("¬ведите количество запросов к очереди");
 		int n = sc.nextInt();
 		System.out.println("¬водите запросы");

@@ -1,6 +1,6 @@
 package ru.artyomkomarov;
 
-
+//Р—Р°С†РёРєР»РµРЅРЅР°СЏ РѕС‡РµСЂРµРґСЊ
 public class CircleQueue implements QueueInterface {
 	private int end = 0, head = 0, mod = 1000000;
 	private Object[] elems = new Object[1000000];
@@ -15,11 +15,11 @@ public class CircleQueue implements QueueInterface {
 		assert end != head; 
 		if(end != head)
 			return elems[head];
-		return "Очередь пуста";
+		return "РћС‡РµСЂРµРґСЊ РїСѓСЃС‚Р°";
 	}
 
 	public Object poll() {
-		assert end != head; // assert не работает на jre7 в командной строке надо Java передать ещё и ключик -ea
+		assert end != head; 
 		Object value = first();
 		if(head != end) {
 			elems[head] = 0;

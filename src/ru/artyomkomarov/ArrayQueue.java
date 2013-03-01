@@ -1,5 +1,5 @@
 package ru.artyomkomarov;
-
+//РћС‡РµСЂРµРґСЊ РЅР° РјР°СЃСЃРёРІРµ, РїСЂРё РїРµСЂРµРїРѕР»РЅРµРЅРёРё РјР°СЃСЃРёРІ СЂР°СЃС€РёСЂСЏРµС‚СЃСЏ
 public class ArrayQueue implements QueueInterface {
 	private int end = 0, head = 0, size = 5;
 	private Object[] elems = new Object[5];
@@ -21,11 +21,11 @@ public class ArrayQueue implements QueueInterface {
 		assert end != head; 
 		if(end != head)
 			return elems[head];
-		return "Очередь пуста";
+		return "РћС‡РµСЂРµРґСЊ РїСѓСЃС‚Р°";
 	}
 
 	public Object poll() {
-		assert end != head; // assert не работает на jre7 в командной строке надо Java передать ещё и ключик -ea
+		assert end != head; // assert РЅРµ СЂР°Р±РѕС‚Р°РµС‚ СЃСЂР°Р·Сѓ РІ java 7, РЅСѓР¶РЅРѕ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РєР»СЋС‡ -ea 
 		Object value = first();
 		if(head != end) elems[head++] = 0;
 		return value;
